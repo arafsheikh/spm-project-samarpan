@@ -20,9 +20,9 @@ class SignupPage extends React.Component {
                         <Form />
                     </div>
                     <div className="col-sm-6 text-center">
-                        <h1 className="page-header">Campy benefits</h1>
+                        <h1 className="page-header">Welcome to the family!</h1>
                         <p className="lead">
-                            Really, you will love it inside. It’s super great!
+                            Together let's make the world a better place.
                         </p>
                         <i className="fa fa-thumbs-o-up bamf"></i>
                     </div>

@@ -24,12 +24,11 @@ class AboutPage extends React.Component {
                                 </div>
                             </div>
                             <div className="media-body">
-                                <h4 className="media-heading">Leo Damon</h4>
+                                <h4 className="media-heading">Who we are?</h4>
                                 <p>
-                                    Pork belly salvia tilde chia freegan four
-                                    loko. Fingerstache microdosing succulents
-                                    VHS venmo green juice wolf leggings hoodie
-                                    shabby chic direct trade flannel.
+                                    We are a team of highly motivated undergrads
+                                    who are looking to make the process of dontation
+                                    more streamlined, and transparent.
                                 </p>
                             </div>
                         </div>
@@ -41,41 +40,16 @@ class AboutPage extends React.Component {
                                 </div>
                             </div>
                             <div className="media-body">
-                                <h4 className="media-heading">Mathew DiCaprio</h4>
+                                <h4 className="media-heading">What we do?</h4>
                                 <p>
-                                    Seitan cloud bread messenger bag small
-                                    batch. Green juice 90s banjo activated
-                                    charcoal wolf. Subway tile scenester
-                                    shoreditch, quinoa edison bulb kogi
-                                    microdosing cliche DIY tumeric meh.
+                                    Seeking effective altruism? Look no futher.
+                                    We make sure that you have complete control over
+                                    the donations you make, and excericise complete
+                                    transparency.
                                 </p>
                             </div>
                         </div>
                         <hr />
-                        <div className="media">
-                            <div className="pull-left">
-                                <div className="media-object">
-                                    <i className="fa fa-camera-retro fa-4x"></i>
-                                </div>
-                            </div>
-                            <div className="media-body">
-                                <h4 className="media-heading">Nick Jackson</h4>
-                                <p>
-                                    Salvia man braid four dollar toast
-                                    chicharrones, selvage hell of selfies.
-                                    Try-hard crucifix cray freegan, viral
-                                    fingerstache aesthetic. Cronut butcher
-                                    irony brooklyn kitsch thundercats.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-sm-6 text-center">
-                        <h1 className="page-header">Prestige worldwide</h1>
-                        <p className="lead">
-                            The first name in entertainment.
-                        </p>
-                        <i className="fa fa-volume-up bamf"></i>
                     </div>
                 </div>
             </section>

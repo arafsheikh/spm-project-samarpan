@@ -14,11 +14,11 @@ class HomePage extends React.Component {
         return (
             <section className="section-home container">
                 <Helmet>
-                    <title>Aqua</title>
+                    <title>Samarpan</title>
                 </Helmet>
                 <div className="jumbotron">
-                    <h1>Success</h1>
-                    <p className="lead">Your website and user system is ready.</p>
+                    <h1>Social Imapct Using Blockchain</h1>
+                    <p className="lead">Donate today!</p>
                 </div>
                 <div className="row">
                     <div className="col-sm-4">
@@ -28,11 +28,10 @@ class HomePage extends React.Component {
                             </div>
                             <div className="panel-body">
                                 <p>
-                                    Bicycle rights jean shorts la croix
-                                    vexillologist hell of kitsch. Photo booth
-                                    craft beer fixie raw denim hot chicken.
-                                    Pickled adaptogen sartorial brooklyn tilde
-                                    bay area.
+                                    Seeking effective altruism? Look no futher.
+                                    We make sure that you have complete control over
+                                    the donations you make, and excericise complete
+                                    transparency.
                                 </p>
                                 <Link to="/about" className="btn btn-info btn-block">
                                     Learn more
@@ -47,10 +46,8 @@ class HomePage extends React.Component {
                             </div>
                             <div className="panel-body">
                                 <p>
-                                    Health goth skateboard tousled umami, tofu
-                                    squid organic freegan +1 keytar brunch
-                                    post-ironic. Copper mug selfies tattooed
-                                    chicharrones short ribs yolo cardigan.
+                                    Join us in our mission to make donations
+                                    transparent!
                                 </p>
                                 <Link to="/signup" className="btn btn-success btn-block">
                                     Learn more
@@ -65,10 +62,8 @@ class HomePage extends React.Component {
                             </div>
                             <div className="panel-body">
                                 <p>
-                                    Roof party readymade tote bag hot chicken
-                                    blog. Fam readymade raclette hella quinoa.
-                                    Cred pour-over yuccie williamsburg shabby
-                                    chic ramps chartreuse messenger bag.
+                                    Still not convinced? Have further questions?
+                                    Want to make a suggestion? Use the form to reach us!
                                 </p>
                                 <Link to="/contact" className="btn btn-warning btn-block">
                                     Learn more

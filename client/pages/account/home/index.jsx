@@ -46,9 +46,9 @@ class HomePage extends React.Component {
             <section className="section-home container">
                 <div className="row">
                     <div className="col-sm-7">
-                        <h1 className="page-header">My account</h1>
+                        <h1 className="page-header">My Donations</h1>
                         <div className="row">
-                            <div className="col-sm-4">
+                            {/* <div className="col-sm-4">
                                 <div className="well text-center">
                                     <div className="stat-value">
                                         {this.state.hour}
@@ -71,35 +71,35 @@ class HomePage extends React.Component {
                                     </div>
                                     <div className="stat-label">second</div>
                                 </div>
-                            </div>
+                            </div> */}
                             <div className="col-sm-4">
                                 <div className="well text-center">
                                     <div className="stat-value">
-                                        {this.state.year}
+                                        Project #1
                                     </div>
-                                    <div className="stat-label">year</div>
+                                    <div className="stat-label">Rs. 13,554</div>
                                 </div>
                             </div>
                             <div className="col-sm-4">
                                 <div className="well text-center">
                                     <div className="stat-value">
-                                        {this.state.month}
+                                        Project #2
                                     </div>
-                                    <div className="stat-label">month</div>
+                                    <div className="stat-label">Rs. 22,405</div>
                                 </div>
                             </div>
                             <div className="col-sm-4">
                                 <div className="well text-center">
                                     <div className="stat-value">
-                                        {this.state.day}
+                                        Project #3
                                     </div>
-                                    <div className="stat-label">day</div>
+                                    <div className="stat-label">Rs. 12,333</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className="col-sm-5 text-center">
-                        <h1 className="page-header">Throttle guage</h1>
+                        <h1 className="page-header">My Statistics</h1>
                         <i className="fa fa-dashboard bamf"></i>
                     </div>
                 </div>
