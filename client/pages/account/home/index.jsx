@@ -4,6 +4,23 @@ const React = require('react');
 const Actions = require('./actions');
 const Store = require('./store');
 var pad1 = {"paddingLeft": "40px"};
+const http = require('http');
+
+var options = {
+  host: '192.168.1.102',
+  port: 3000,
+  path: '/api/namespace1.AccountTransfer'
+};
+
+http.get(options, function(res) {
+  console.log("Got response: " + res.statusCode);
+
+  res.on("data", function(chunk) {
+    console.log("BODY: " + chunk);
+  });
+}).on('error', function(e) {
+  console.log("Got error: " + e.message);
+});
 
 class Popup extends React.Component {
   render() {
