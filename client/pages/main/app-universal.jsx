@@ -13,6 +13,7 @@ const React = require('react');
 const ReactRouter = require('react-router-dom');
 const RouteRedirect = require('../../components/route-redirect.jsx');
 const Signup = require('./signup/index.jsx');
+const SignupNGO = require('./signup-ngo/index.jsx');
 
 
 const Route = ReactRouter.Route;
@@ -33,6 +34,7 @@ const AppUniversal = function () {
                 <Route path="/login/reset/:email/:key" component={LoginReset} />
                 <Route path="/login/logout" exact component={LoginLogout} />
                 <Route path="/signup" exact component={Signup} />
+                <Route path="/signup-ngo" exact component={SignupNGO} />
 
                 <RouteRedirect from="/moved" to="/" code={301} />
 
