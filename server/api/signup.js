@@ -3,7 +3,7 @@ const Async = require('async');
 const Boom = require('boom');
 const Config = require('../../config');
 const Joi = require('joi');
-
+const req = require('request');
 
 const internals = {};
 
@@ -92,6 +92,44 @@ internals.applyRoutes = function (server, next) {
                     const email = request.payload.email;
 
                     User.create(username, password, email, done);
+
+                    // Set the headers
+                    var headers = {
+                        'User-Agent':       'Super Agent/0.0.1',
+                        'Content-Type':     'application/x-www-form-urlencoded'
+                    }
+
+                    // Configure the request
+                    var options = {
+                        url: 'http://192.168.1.102:3000/api/namespace1.Customer/',
+                        method: 'POST',
+                        headers: headers,
+                        form: {'$class': 'namespace1.Customer', 'customerId': username, 'firstName': username, 'lastName': username}
+                    }
+
+                    // Configure the request
+                    var options1 = {
+                        url: 'http://192.168.1.102:3000/api/namespace1.Account',
+                        method: 'POST',
+                        headers: headers,
+                        form: {'$class': 'namespace1.Account', 'accountId': username, 'owner': username, 'balance': 10000}
+                    }
+
+                    // Start the request
+                    req(options, function (error, response, body) {
+                        if (!error && response.statusCode == 200) {
+                            // Print out the response body
+                            console.log(body);
+                            // Start the request
+                            req(options1, function (error, response, body) {
+                                if (!error && response.statusCode == 200) {
+                                    // Print out the response body
+                                    console.log(body);
+                                }
+                            });
+                        }
+                    });
+
                 },
                 account: ['user', function (results, done) {
 
@@ -176,6 +214,38 @@ internals.applyRoutes = function (server, next) {
                 request.cookieAuth.set(result);
                 reply(result);
             });
+        }
+    });
+
+    server.route({
+        method: 'POST',
+        path: '/signup-ngo',
+        handler: function (request, reply) {
+
+            const mailer = request.server.plugins.mailer;
+
+            const username = request.payload.username;
+            const password = request.payload.password;
+            const email = request.payload.email;
+
+            const emailOptions = {
+                subject: 'Your ' + Config.get('/projectName') + ' account',
+                to: {
+                    name: request.payload.name,
+                    address: request.payload.email
+                }
+            };
+            const template = 'welcome';
+
+            mailer.sendEmail(emailOptions, template, request.payload, (err) => {
+
+                if (err) {
+                    console.warn('sending welcome email failed:', err.stack);
+                }
+            });
+
+            reply({ username: request.params.username , org: request.params.org, amt: request.params.amt});
+            
         }
     });
 

@@ -12,7 +12,7 @@ const criteria = {
 
 const config = {
     $meta: 'This file configures the plot device.',
-    projectName: 'Aqua',
+    projectName: 'Samarpan',
     port: {
         web: {
             $filter: 'env',
@@ -52,18 +52,18 @@ const config = {
         port: 465,
         secure: true,
         auth: {
-            user: 'jedireza@gmail.com',
-            pass: process.env.SMTP_PASSWORD
+            user: 'smarpan.inc@gmail.com',
+            pass: 'samarpan123'
         }
     },
     system: {
         fromAddress: {
-            name: 'Aqua',
-            address: 'jedireza@gmail.com'
+            name: 'Samarpan Inc',
+            address: 'samarpan.inc@gmail.com'
         },
         toAddress: {
-            name: 'Aqua',
-            address: 'jedireza@gmail.com'
+            name: 'Samarpan Inc',
+            address: 'smarpan.inc@gmail.com'
         }
     }
 };

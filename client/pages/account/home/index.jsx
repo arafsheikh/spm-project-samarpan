@@ -1,6 +1,8 @@
 'use strict';
 const Moment = require('moment');
 const React = require('react');
+const Actions = require('./actions');
+const Store = require('./store');
 var pad1 = {"paddingLeft": "40px"};
 
 class Popup extends React.Component {
@@ -65,37 +67,25 @@ class HomePage extends React.Component {
 
         super(props);
 
-        this.state = this.getThisMoment();
+        Actions.getUser();
+
+        this.state = Store.getState();
         showPopup: false
     }
 
     componentDidMount() {
 
-        this.interval = setInterval(this.refreshTime.bind(this), 1000);
+        this.unsubscribeStore = Store.subscribe(this.onStoreChange.bind(this));
     }
 
     componentWillUnmount() {
 
-        clearInterval(this.interval);
+        this.unsubscribeStore();
     }
 
-    refreshTime() {
+    onStoreChange() {
 
-        this.setState(this.getThisMoment());
-    }
-
-    getThisMoment() {
-
-        const thisMoment = Moment();
-
-        return {
-            second: thisMoment.format('ss'),
-            minute: thisMoment.format('mm'),
-            hour: thisMoment.format('HH'),
-            day: thisMoment.format('DD'),
-            month: thisMoment.format('MM'),
-            year: thisMoment.format('YYYY')
-        };
+        this.setState(Store.getState());
     }
 
     togglePopup() {
@@ -119,7 +109,7 @@ class HomePage extends React.Component {
                           <img src="public/media/mclaren-p1-experimental-prototype.jpg" className="img-responsive img-rounded" alt="Responsive image"/>
                         </div>
                         <div className="row">
-                          <h4>Preetham Chandra</h4>
+                          <h4>{this.state.user.username}</h4>
                           <p>Donated Rs. 600000</p>
                         </div>
                     </div>
