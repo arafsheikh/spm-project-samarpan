@@ -83,7 +83,10 @@ class Navbar extends React.Component {
                                 <Link to="/about">About</Link>
                             </li>
                             <li className={this.isPathActive('/signup')}>
-                                <Link to="/signup">Signup</Link>
+                                <Link to="/signup">Signup (Donor)</Link>
+                            </li>
+                            <li className={this.isPathActive('/signup-ngo')}>
+                                <Link to="/signup-ngo">Signup (NGO)</Link>
                             </li>
                             <li className={this.isPathActive('/contact')}>
                                 <Link to="/contact">Contact</Link>
