@@ -1,5 +1,6 @@
 'use strict';
 
+const http = require("http");
 
 exports.register = function (server, options, next) {
 
@@ -9,6 +10,18 @@ exports.register = function (server, options, next) {
         handler: function (request, reply) {
 
             reply({ message: 'Welcome to the plot device.' });
+        }
+    });
+
+    server.route({
+        method: 'GET',
+        path: '/x/{username}/{org}/{amt}',
+        handler: function (request, reply) {
+
+            reply({ username: request.params.username , org: request.params.org, amt: request.params.amt});
+            http.get('http://localhost:8000/x/qq/qq/qq', res => {
+                console.log('yo!');
+            });
         }
     });
 
