@@ -26,6 +26,17 @@ class Actions {
             Constants.GET_USER_RESPONSE
         );
     }
+
+    static donateReq(data) {
+        console.log(data);
+        ApiActions.get(
+            `/api/pay/${data['username']}/${data['org']}/${data['amt']}`,
+            undefined,
+            Store,
+            Constants.GET_USER,
+            Constants.GET_USER_RESPONSE
+        );
+    }
 }
 
 
