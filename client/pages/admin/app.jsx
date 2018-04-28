@@ -15,6 +15,7 @@ const StatusDetails = require('./statuses/details/index.jsx');
 const StatusSearch = require('./statuses/search/index.jsx');
 const UserDetails = require('./users/details/index.jsx');
 const UserSearch = require('./users/search/index.jsx');
+const NewTransaction = require('./transaction/index.jsx');
 
 
 const Router = ReactRouter.BrowserRouter;
@@ -38,6 +39,8 @@ const App = (
                 <Route path="/admin/statuses/:id" component={StatusDetails} />
                 <Route path="/admin/users" exact component={UserSearch} />
                 <Route path="/admin/users/:id" component={UserDetails} />
+
+                <Route path="/admin/transaction" exact component={NewTransaction} />
 
                 <Route component={NotFound} />
             </Switch>

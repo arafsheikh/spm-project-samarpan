@@ -40,6 +40,7 @@
     "nodemailer-markdown": "^1.0.2",
     "object-assign": "4.x.x",
     "react": "^15.6.2",
+    "react-dropdown": "^1.4.2",
     "react-helmet": "^5.2.0",
     "redux": "3.x.x",
     "request": "^2.85.0",
