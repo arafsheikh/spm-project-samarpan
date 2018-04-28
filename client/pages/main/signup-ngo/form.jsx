@@ -58,7 +58,7 @@ class Form extends React.Component {
         if (this.state.success) {
             alert = <Alert
                 type="success"
-                message="Success. Redirecting..."
+                message="Thank you for signing up. You'll hear from us soon."
             />;
         }
         else if (this.state.error) {
