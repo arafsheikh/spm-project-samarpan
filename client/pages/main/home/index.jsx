@@ -17,7 +17,7 @@ class HomePage extends React.Component {
                     <title>Samarpan</title>
                 </Helmet>
                 <div className="jumbotron">
-                    <h1>Social Imapct Using Blockchain</h1>
+                    <h1>Social Impact Using Blockchain</h1>
                     <p className="lead">Donate today!</p>
                 </div>
                 <div className="row">

@@ -26,9 +26,12 @@ class AboutPage extends React.Component {
                             <div className="media-body">
                                 <h4 className="media-heading">Who we are?</h4>
                                 <p>
-                                    We are a team of highly motivated undergrads
-                                    who are looking to make the process of dontation
-                                    more streamlined, and transparent.
+                                A team of people came together for the sake of a term project.
+                                While brainstorming for ideas to solve the issues we see around,
+                                we’ve come across a solution that we think can change the way NGOs and
+                                charities are funded all across the globe, by filling the missing links
+                                of <b>TRUST</b> and <b>TRANSPARENCY</b>,  and we are committed to push our idea to that level.
+
                                 </p>
                             </div>
                         </div>
