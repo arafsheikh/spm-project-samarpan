@@ -5,32 +5,20 @@ const Store = require('./store');
 
 
 class Actions {
-    static getDetails() {
-
+    static sendTransaction(data) {
+        console.log(data);
         ApiActions.get(
-            '/api/accounts/my',
+            `/api/pay/root/${data['vendor']}/${data['amt']}`,
             undefined,
             Store,
-            Constants.GET_DETAILS,
-            Constants.GET_DETAILS_RESPONSE
+            Constants.SEND_MESSAGE,
+            Constants.SEND_MESSAGE_RESPONSE
         );
     }
 
     static getUser() {
-
         ApiActions.get(
             '/api/users/my',
-            undefined,
-            Store,
-            Constants.GET_USER,
-            Constants.GET_USER_RESPONSE
-        );
-    }
-
-    static donateReq(data) {
-        console.log(data);
-        ApiActions.get(
-            `/api/pay/${data['username']}/${data['org']}/${data['amt']}`,
             undefined,
             Store,
             Constants.GET_USER,

@@ -80,6 +80,29 @@ http.get(options, function(res) {
 });
 
 class Popup extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    Actions.getUser();
+    this.state = Store.getState();
+
+    this.handleAmtChange = this.handleAmtChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(event) {
+    Actions.donateReq({
+        name: this.state.user.username,
+        amt: this.state.amt,
+        org: 'abc'
+    });
+  }
+
+  handleAmtChange(event) {
+    this.setState({amt: event.target.value});
+  }
+
   render() {
     return (
       <div className='popup'>
@@ -97,7 +120,7 @@ class Popup extends React.Component {
                 <label>Card Details</label>
                 <div id="shadow"></div>
                   <div id="image-container">
-                    <span id="amount">Paying Rs: <input type="number" id="amount" placeholder="1000"/></span>
+                    <span id="amount">Paying Rs: <input type="number" id="amount" placeholder="1000" value={this.state.amt} onChange={this.handleAmtChange}/></span>
                     <span id="card-image">
 
                       </span>
@@ -126,7 +149,7 @@ class Popup extends React.Component {
 
             </div>
             <input type="text" id="card-token" />
-            <button type="button" id="card-btn">Submit</button>
+            <button type="button" id="card-btn" onClick={this.handleSubmit.bind(this)}>Submit</button>
             <button id="btn-cancel" onClick={this.props.closePopup}>Cancel</button>
           </div>
         </div>
