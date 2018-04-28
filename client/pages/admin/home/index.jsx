@@ -46,7 +46,7 @@ class HomePage extends React.Component {
             <section className="section-home container">
                 <div className="row">
                     <div className="col-sm-7">
-                        <h1 className="page-header">Admin</h1>
+                        <h1 className="page-header">My Transactions</h1>
                         <div className="row">
                             <div className="col-sm-4">
                                 <div className="well text-center">
@@ -99,7 +99,7 @@ class HomePage extends React.Component {
                         </div>
                     </div>
                     <div className="col-sm-5 text-center">
-                        <h1 className="page-header">Throttle guage</h1>
+                        <h1 className="page-header">Trust Value</h1>
                         <i className="fa fa-dashboard bamf"></i>
                     </div>
                 </div>
