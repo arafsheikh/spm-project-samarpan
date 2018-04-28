@@ -4,6 +4,7 @@ const React = require('react');
 const Actions = require('./actions');
 const Store = require('./store');
 var pad1 = {"paddingLeft": "40px"};
+var aliCenter = {"text-align": "center"};
 var obj;
 const http = require('http');
 
@@ -241,8 +242,11 @@ class HomePage extends React.Component {
                               </p>
                         </div>
                         
-                        <div className="col-sm-2">
+                        <div className="col-sm-2" style={aliCenter}>
                             <br/><br/><br/>
+                            <h4>Trust Value<br/>
+                            <b>3</b></h4><br/>
+
                             <button onClick={this.togglePopup.bind(this)}>
                               Donate
                             </button>
@@ -268,8 +272,11 @@ class HomePage extends React.Component {
                               </p>
                         </div>
                         
-                        <div className="col-sm-2">
+                        <div className="col-sm-2" style={aliCenter}>
                             <br/><br/><br/>
+                            <h4>Trust Value<br/>
+                            <b>5</b></h4><br/>
+
                             <button onClick={this.togglePopup.bind(this)}>
                               Donate
                             </button>
@@ -294,8 +301,11 @@ class HomePage extends React.Component {
                               </p>
                         </div>
                         
-                        <div className="col-sm-2">
+                        <div className="col-sm-2" style={aliCenter}>
                             <br/><br/><br/>
+                            <h4>Trust Value<br/>
+                            <b>3</b></h4><br/>
+
                             <button onClick={this.togglePopup.bind(this)}>
                               Donate
                             </button>
@@ -321,8 +331,11 @@ class HomePage extends React.Component {
                               </p>
                         </div>
                         
-                        <div className="col-sm-2">
+                        <div className="col-sm-2" style={aliCenter}>
                             <br/><br/><br/>
+                            <h4>Trust Value<br/>
+                            <b>2</b></h4><br/>
+
                             <button onClick={this.togglePopup.bind(this)}>
                               Donate
                             </button>
@@ -349,8 +362,11 @@ class HomePage extends React.Component {
                               </p>
                         </div>
                         
-                        <div className="col-sm-2">
+                        <div className="col-sm-2" style={aliCenter}>
                             <br/><br/><br/>
+                            <h4>Trust Value<br/>
+                            <b>4</b></h4><br/>
+
                             <button onClick={this.togglePopup.bind(this)}>
                               Donate
                             </button>
