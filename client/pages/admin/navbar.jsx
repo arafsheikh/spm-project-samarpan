@@ -54,7 +54,6 @@ class Navbar extends React.Component {
                                 className="navbar-logo"
                                 src="/public/media/logo-square-inverse.png"
                             />
-                            <span className="navbar-brand-label">Samarpan</span>
                         </Link>
                         <button
                             className="navbar-toggle collapsed"
