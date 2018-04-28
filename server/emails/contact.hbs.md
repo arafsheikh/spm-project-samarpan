@@ -6,6 +6,6 @@
 | Email:   | {{email}}   |
 | Message: | {{message}} |
 
-Love,
+Thank you,
 
-The Plot Device
+Team Samarpan

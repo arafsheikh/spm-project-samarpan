@@ -8,6 +8,6 @@ Here are your login credentials:
 | Username: | {{username}} |
 | Email:    | {{email}}    |
 
-Love,
+Thank you,
 
-The Plot Device
+Team Samarpan

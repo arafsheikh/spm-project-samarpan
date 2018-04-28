@@ -45,8 +45,9 @@ class Form extends React.Component {
         Actions.sendRequest({
             name: this.input.name.value(),
             username: this.input.username.value(),
-            password: this.input.password.value(),
-            email: this.input.email.value()
+            email: this.input.email.value(),
+            doc1: this.input.doc1.value(),
+            doc2: this.input.doc2.value()
         });
     }
 
@@ -96,13 +97,20 @@ class Form extends React.Component {
                     disabled={this.state.loading}
                 />
                 <TextControl
-                    ref={(c) => (this.input.password = c)}
-                    name="password"
-                    label="Password"
-                    type="password"
-                    hasError={this.state.hasError.password}
-                    help={this.state.help.password}
+                    ref={(c) => (this.input.doc1 = c)}
+                    name="doc1"
+                    label="Certificate of registration with National Trust"
+                    hasError={this.state.hasError.doc1}
+                    help={this.state.help.doc1}
                     disabled={this.state.loading}
+                />
+                <TextControl
+                    ref={(c) => (this.input.doc2 = c)}
+                    name="doc2"
+                    label="Certificate of registration under PWD Act"
+                    hasError={this.state.hasError.doc2}
+                    help={this.state.help.doc2}
+                    disabled={this.state.doc2}
                 />
                 <ControlGroup hideLabel={true} hideHelp={true}>
                     <Button

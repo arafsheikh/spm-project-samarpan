@@ -224,18 +224,20 @@ internals.applyRoutes = function (server, next) {
 
             const mailer = request.server.plugins.mailer;
 
+            const name = request.payload.name;
             const username = request.payload.username;
-            const password = request.payload.password;
             const email = request.payload.email;
+            const doc1 = request.payload.doc1;
+            const doc2 = request.payload.doc2;
 
             const emailOptions = {
-                subject: 'Your ' + Config.get('/projectName') + ' account',
+                subject: 'New NGO on ' + Config.get('/projectName') + ' verification',
                 to: {
                     name: request.payload.name,
-                    address: request.payload.email
+                    address: 'smarpan.inc@gmail.com'
                 }
             };
-            const template = 'welcome';
+            const template = 'verification';
 
             mailer.sendEmail(emailOptions, template, request.payload, (err) => {
 
