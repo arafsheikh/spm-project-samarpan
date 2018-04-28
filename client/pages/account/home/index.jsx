@@ -4,7 +4,9 @@ const React = require('react');
 const Actions = require('./actions');
 const Store = require('./store');
 var pad1 = {"paddingLeft": "40px"};
+var obj;
 const http = require('http');
+
 
 var options = {
   host: '192.168.1.102',
@@ -12,11 +14,66 @@ var options = {
   path: '/api/namespace1.AccountTransfer'
 };
 
+function CreateTableFromJSON() {
+
+        // EXTRACT VALUE FOR HTML HEADER.
+        var col = ['to', 'amount', 'timestamp'];
+
+        // CREATE DYNAMIC TABLE.
+        var table = document.createElement("table");
+        table.setAttribute("class", "table table-striped")
+        // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
+
+        var tr = table.insertRow(-1);                   // TABLE ROW.
+
+        var th = document.createElement("th");      // TABLE HEADER.
+        th.innerHTML = "Contributed to";
+        tr.appendChild(th);
+        var th = document.createElement("th");      // TABLE HEADER.
+        th.innerHTML = "Amount";
+        tr.appendChild(th);
+        var th = document.createElement("th");      // TABLE HEADER.
+        th.innerHTML = "Date";
+        tr.appendChild(th);
+
+        // ADD JSON DATA TO THE TABLE AS ROWS.
+        for (var i = 0; i < obj.length; i++) {
+            if(obj[i].from=="resource:namespace1.Account#" + "mohit"/*this.state.user.username*/){
+              tr = table.insertRow(-1);
+
+              for (var j = 0; j < col.length; j++) {
+                  var tabCell = tr.insertCell(-1);
+                  if(j==0){
+                      tabCell.innerHTML = String(obj[i][col[j]]).slice(28);
+                  }
+                  else if(j==1){
+                      tabCell.innerHTML = "Rs. " + String(obj[i][col[j]]);
+                  }
+                  else if(j==2){
+                      tabCell.innerHTML = String(obj[i][col[j]]).slice(0, 10);
+                  }
+                  else{
+                    tabCell.innerHTML = obj[i][col[j]];
+                  }
+
+              }
+            }
+        }
+
+        // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+        var divContainer = document.getElementById("showData");
+        divContainer.innerHTML = "";
+        divContainer.appendChild(table);
+}
+
 http.get(options, function(res) {
   console.log("Got response: " + res.statusCode);
 
   res.on("data", function(chunk) {
-    console.log("BODY: " + chunk);
+    //console.log("BODY: " + chunk);
+    obj = JSON.parse(chunk);
+    CreateTableFromJSON();
+    console.log(obj);
   });
 }).on('error', function(e) {
   console.log("Got error: " + e.message);
@@ -108,7 +165,6 @@ class HomePage extends React.Component {
     constructor(props) {
 
         super(props);
-
         Actions.getUser();
 
         this.state = Store.getState();
@@ -157,37 +213,7 @@ class HomePage extends React.Component {
                     </div>
                     <div className="col-sm-7" style={pad1}>
                       <br/><br/><br/><br/><br/><br/>
-                      <table className="table table-striped">
-                        <thead>
-                          <tr>
-                            <th>Project Name</th>
-                            <th>Location</th>
-                            <th>Donation</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>Sample Project 1</td>
-                            <td>Delhi</td>
-                            <td>Rs. 2800</td>
-                          </tr>
-                          <tr>
-                            <td>Sample Project 2</td>
-                            <td>Ghaziabad</td>
-                            <td>Rs. 6900</td>
-                          </tr>
-                          <tr>
-                            <td>Sample Project 3</td>
-                            <td>Gurugram</td>
-                            <td>Rs. 10200</td>
-                          </tr>
-                          <tr>
-                            <td>Sample Project 4</td>
-                            <td>Faridabad</td>
-                            <td>Rs. 600000</td>
-                          </tr>
-                        </tbody>
-                      </table>
+                      <div id="showData"></div>
                     </div>
 
                 </div>

@@ -50,7 +50,7 @@ class HomePage extends React.Component {
                                     transparent!
                                 </p>
                                 <Link to="/signup" className="btn btn-success btn-block">
-                                    Learn more
+                                    Sign up now!
                                 </Link>
                             </div>
                         </div>
